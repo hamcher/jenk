@@ -9,7 +9,6 @@ pipeline{
             agent {
                 dockerfile {
                     filename 'Dockerfile'
-                    additionalBuildArgs "--build-arg SSH_PR_KEY=\"\$(cat ${SSH_KEY})\""
                     reuseNode true
                 }
             }
