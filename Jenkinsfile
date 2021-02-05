@@ -4,8 +4,9 @@ pipeline{
         HOME = '.'
     }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
+                
                 sh 'npm -v'
                 sh 'echo "Hello World" step 2'
                 sh 'echo "Hello World" step 3'
