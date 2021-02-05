@@ -11,4 +11,15 @@ pipeline{
             }
         }
     }
+    post{
+        always{
+            echo "ok ====++++always++++===="
+        }
+        success{
+            echo "ok ====++++only when successful++++===="
+        }
+        failure{
+            echo "ok ====++++only when failed++++===="
+        }
+    }
 }
