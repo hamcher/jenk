@@ -7,7 +7,7 @@ pipeline{
     stages {
         stage('Build') {
             steps {
-                echo "step 1 ====++++ ${MAIN_URL} ++++===="
+                echo "step 1 ====++++ ${GIT_COMMIT} ++++===="
             }
         }
     }
