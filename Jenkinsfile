@@ -2,18 +2,18 @@ pipeline{
     agent any
     environment {
         HOME = '.'
+        MAIN_URL = 'https://testenv.com'
     }
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World" step 2'
-                sh 'echo "Hello World" step 3'
+                echo "step 1 ====++++ ${MAIN_URL} ++++===="
             }
         }
     }
     post{
         always{
-            echo "ok ====++++always++++===="
+            echo "ok ====++++always++++==== ${MAIN_URL}"
         }
         success{
             echo "ok ====++++only when successful++++===="
