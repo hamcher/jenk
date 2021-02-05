@@ -5,8 +5,16 @@ pipeline{
         MAIN_URL = 'https://testenv.com'
     }
     stages {
-        stage("Test"){
+        stage("Test") {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                    additionalBuildArgs "--build-arg SSH_PR_KEY=\"\$(cat ${SSH_KEY})\""
+                    reuseNode true
+                }
+            }
             steps{
+                sh '. /root/.nvm/nvm.sh &&  nvm install && npm -v'
                 echo "====++++executing Test++++===="
             }
         }
